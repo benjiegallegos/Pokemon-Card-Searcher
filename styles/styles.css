@@ -1,0 +1,164 @@
+/* GENERAL STYLES ==================================================================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+/* SEARCH BAR & BUTTON ==================================================================== */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px; /* Adds space between search bar & button */
+    margin-top: 20px;
+}
+
+/* Centered and Responsive Search Bar */
+#pokemon-search {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Search Bar Focus Effect */
+#pokemon-search:focus {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 10px rgba(0, 91, 187, 0.5);
+    outline: none;
+}
+
+/* Search Button */
+.btn-search {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    display: block;
+}
+
+/* Button Hover Effect */
+.btn-search:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Click Effect */
+.btn-search:active {
+    transform: scale(0.95);
+}
+
+
+/* FILTERS ==================================================================== */
+.filter-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#type-filter {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Apply Filter Button */
+.btn-filter {
+    background: linear-gradient(135deg, #28a745, #218838); /* Green gradient */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    display: block;
+    margin: 10px auto; /* Centers the button */
+}
+
+/* Hover Effect */
+.btn-filter:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Click Effect */
+.btn-filter:active {
+    transform: scale(0.95);
+}
+
+
+/* POKÉMON CARD ==================================================================== */
+#pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Pokémon Card */
+.pokemon-card {
+    width: 18rem;
+    margin: 10px;
+    display: inline-block;
+}
+
+/* Styling the Card */
+.card {
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Pokémon Image */
+.card img {
+    max-width: 120px;
+    margin: auto;
+    display: block;
+}
+
+/* Pokémon Text */
+.card-body h5 {
+    font-weight: bold;
+    color: #333;
+}
+
+.card-body p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.stat-line {
+    white-space: nowrap; /* Prevents line break */
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
