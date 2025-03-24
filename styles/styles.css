@@ -1,9 +1,14 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /* GENERAL STYLES ==================================================================== */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', 'VT323', 'Pixelify Sans', monospace;
     background-color: #f8f9fa;
     text-align: center;
+    line-height: 1.6;
 }
+
 /* SEARCH BAR & BUTTON ==================================================================== */
 .search-container {
     display: flex;
@@ -25,6 +30,8 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease-in-out;
+    font-family: 'Press Start 2P', 'VT323', 'Pixelify Sans', monospace;
+    font-size: 0.8rem;
 }
 
 /* Search Bar Focus Effect */
@@ -49,6 +56,8 @@ body {
     max-width: 400px;
     text-align: center;
     display: block;
+    font-family: 'Press Start 2P', 'VT323', 'Pixelify Sans', monospace;
+    font-size: 0.8rem;
 }
 
 /* Button Hover Effect */
@@ -77,6 +86,8 @@ body {
     border: 2px solid #007bff;
     text-align: center;
     background-color: #fff;
+    font-family: 'Press Start 2P', 'VT323', 'Pixelify Sans', monospace;
+    font-size: 0.8rem;
 }
 
 /* Apply Filter Button */
@@ -95,6 +106,8 @@ body {
     text-align: center;
     display: block;
     margin: 10px auto; /* Centers the button */
+    font-family: 'Press Start 2P', 'VT323', 'Pixelify Sans', monospace;
+    font-size: 0.8rem;
 }
 
 /* Hover Effect */
@@ -114,13 +127,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     margin-top: 20px;
+    padding: 0 15px;
 }
 
 /* Pokémon Card */
 .pokemon-card {
-    width: 18rem;
+    width: 300px;
     margin: 10px;
     display: inline-block;
 }
@@ -131,34 +145,53 @@ body {
     background: linear-gradient(135deg, #ffffff, #f8f9fa);
     transition: transform 0.2s ease-in-out;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 20px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* Pokémon Image */
 .card img {
-    max-width: 120px;
-    margin: auto;
+    max-width: 180px;
+    height: auto;
+    margin: 0 auto 15px;
     display: block;
 }
 
 /* Pokémon Text */
+.card-body {
+    padding: 10px;
+}
+
 .card-body h5 {
+    font-size: 0.9rem;
     font-weight: bold;
     color: #333;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.8;
 }
 
 .card-body p {
-    margin: 5px 0;
+    font-size: 0.7rem;
+    margin: 12px 0;
     color: #555;
+    line-height: 1.6;
 }
 
 .stat-line {
-    white-space: nowrap; /* Prevents line break */
+    white-space: normal;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+    font-size: 0.7rem;
 }
