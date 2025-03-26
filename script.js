@@ -21,10 +21,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Trying Pokemon Fetch Api
+
+// Define colors for Pokémon types
+const typeColors = {
+    bug: "#A8B820",
+    dragon: "#7038F8",
+    electric: "#F8D030",
+    fighting: "#C03028",
+    fire: "#F08030",
+    flying: "#A890F0",
+    ghost: "#705898",
+    grass: "#78C850",
+    ground: "#E0C068",
+    ice: "#98D8D8",
+    normal: "#A8A878",
+    poison: "#A040A0",
+    psychic: "#F85888",
+    rock: "#B8A038",
+    water: "#6890F0",
+};
+
+// Fetch and filter Pokémon
 function searchPokemon() {
     const searchQuery = document.getElementById("pokemon-search").value.toLowerCase();
-    const typeFilter = document.getElementById("type-filter").value.toLowerCase();
+    const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked'))
+                              .map(checkbox => checkbox.value.toLowerCase());
     const pokemonList = document.getElementById("pokemon-list");
 
     // Clear previous results
@@ -37,17 +58,22 @@ function searchPokemon() {
                 fetch(pokemon.url)
                     .then(response => response.json())
                     .then(pokeData => {
-                        // Search by first letter or left-side of name
                         const nameMatch = searchQuery ? pokeData.name.startsWith(searchQuery) : true;
-                        // Filter by Type if selected
-                        const typeMatch = typeFilter ? pokeData.types.some(type => type.type.name === typeFilter) : true;
+
+                        const typeMatch = selectedTypes.length > 0 
+                            ? pokeData.types.some(type => selectedTypes.includes(type.type.name.toLowerCase())) 
+                            : true;
 
                         if (nameMatch && typeMatch) {
                             let listItem = document.createElement("div");
                             listItem.classList.add("pokemon-card");
 
+                            // Get the primary type color
+                            const primaryType = pokeData.types[0].type.name.toLowerCase();
+                            const bgColor = typeColors[primaryType] || "#ccc"; // Default gray if type not found
+
                             listItem.innerHTML = `
-                            <div class="card p-3 shadow-lg">
+                            <div class="card p-3 shadow-lg" style="background: linear-gradient(135deg, ${bgColor}, #ffffff);">
                                 <img src="${pokeData.sprites.front_default}" class="card-img-top" alt="${pokeData.name}">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">${pokeData.name.toUpperCase()}</h5>
@@ -60,8 +86,8 @@ function searchPokemon() {
                                     <p class="card-text stat-line"><strong>Defense & Speed:</strong>&nbsp;${pokeData.stats[2].base_stat}&nbsp;|&nbsp;${pokeData.stats[5].base_stat}</p>
                                 </div>
                             </div>
-                        `;
-                        
+                            `;
+
                             pokemonList.appendChild(listItem);
                         }
                     })

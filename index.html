@@ -20,33 +20,59 @@
             <input type="text" id="pokemon-search" class="form-control text-center w-50" placeholder="Enter Pokémon Name">
             <button onclick="searchPokemon()" class="btn btn-primary ms-2">🔍 Search</button>
         </div>
-    
-        <!-- Type Filter -->
-        <div class="mt-3">
-            <label for="type-filter" class="form-label">Filter by Type:</label>
-            <select id="type-filter" class="form-select w-25 mx-auto">
-                <option value="">All Types</option>
-                <option value="bug">Bug</option>
-                <option value="dragon">Dragon</option>
-                <option value="electric">Electric</option>
-                <option value="fighting">Fighting</option>
-                <option value="fire">Fire</option>
-                <option value="flying">Flying</option>
-                <option value="ghost">Ghost</option>
-                <option value="grass">Grass</option>
-                <option value="ground">Ground</option>
-                <option value="ice">Ice</option>
-                <option value="normal">Normal</option>
-                <option value="poison">Poison</option>
-                <option value="psychic">Psychic</option>
-                <option value="rock">Rock</option>
-                <option value="water">Water</option>
-            </select>
-            <div class="container text-center mt-3">
-                <button onclick="applyFilters()" class="btn-filter">Filter</button>
-            </div>            
-        </div>
-    
+
+<!-- Type Filter -->
+<div class="mt-3 filter-container">
+    <label class="form-label">Filter by Type:</label>
+    <div id="type-filter" class="checkbox-group">
+        <input type="checkbox" id="bug" name="type" value="bug">
+        <label for="bug">Bug</label>
+
+        <input type="checkbox" id="dragon" name="type" value="dragon">
+        <label for="dragon">Dragon</label>
+
+        <input type="checkbox" id="electric" name="type" value="electric">
+        <label for="electric">Electric</label>
+
+        <input type="checkbox" id="fighting" name="type" value="fighting">
+        <label for="fighting">Fighting</label>
+
+        <input type="checkbox" id="fire" name="type" value="fire">
+        <label for="fire">Fire</label>
+
+        <input type="checkbox" id="flying" name="type" value="flying">
+        <label for="flying">Flying</label>
+
+        <input type="checkbox" id="ghost" name="type" value="ghost">
+        <label for="ghost">Ghost</label>
+
+        <input type="checkbox" id="grass" name="type" value="grass">
+        <label for="grass">Grass</label>
+
+        <input type="checkbox" id="ground" name="type" value="ground">
+        <label for="ground">Ground</label>
+
+        <input type="checkbox" id="ice" name="type" value="ice">
+        <label for="ice">Ice</label>
+
+        <input type="checkbox" id="normal" name="type" value="normal">
+        <label for="normal">Normal</label>
+
+        <input type="checkbox" id="poison" name="type" value="poison">
+        <label for="poison">Poison</label>
+
+        <input type="checkbox" id="psychic" name="type" value="psychic">
+        <label for="psychic">Psychic</label>
+
+        <input type="checkbox" id="rock" name="type" value="rock">
+        <label for="rock">Rock</label>
+
+        <input type="checkbox" id="water" name="type" value="water">
+        <label for="water">Water</label>
+    </div>
+</div>
+
+        
         <!-- Pokémon Display -->
         <div id="pokemon-list" class="mt-4 d-flex flex-wrap justify-content-center"></div>
     </div>

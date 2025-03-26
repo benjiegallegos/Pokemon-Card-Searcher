@@ -72,53 +72,49 @@ body {
 }
 
 
+
+
 /* FILTERS ==================================================================== */
-.filter-container {
-    text-align: center;
-    margin-top: 20px;
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ensures uniform grid */
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    justify-items: center; /* Centers the buttons */
 }
 
-#type-filter {
-    width: 100%;
-    max-width: 250px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #007bff;
-    text-align: center;
+.checkbox-group label {
     background-color: #fff;
-    font-family: 'Press Start 2P', 'VT323', 'Pixelify Sans', monospace;
-    font-size: 0.8rem;
-}
-
-/* Apply Filter Button */
-.btn-filter {
-    background: linear-gradient(135deg, #28a745, #218838); /* Green gradient */
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 16px;
+    border: 2px solid #007bff;
+    padding: 8px 12px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 200px;
-    text-align: center;
-    display: block;
-    margin: 10px auto; /* Centers the button */
     font-family: 'Press Start 2P', 'VT323', 'Pixelify Sans', monospace;
     font-size: 0.8rem;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    min-width: 120px; /* Minimum width */
+    max-width: 140px; /* Maximum width */
+    height: 40px; /* Fixed height for consistency */
+    text-align: center;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Prevents text overflow */
 }
 
-/* Hover Effect */
-.btn-filter:hover {
-    background: linear-gradient(135deg, #218838, #1e7e34);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+.checkbox-group input[type="checkbox"] {
+    display: none;
 }
 
-/* Click Effect */
-.btn-filter:active {
-    transform: scale(0.95);
+.checkbox-group input[type="checkbox"]:checked + label {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
 
 
